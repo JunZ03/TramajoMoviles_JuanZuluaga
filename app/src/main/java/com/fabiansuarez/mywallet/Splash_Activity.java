@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.os.Handler;
 
 public class Splash_Activity extends AppCompatActivity {
@@ -12,17 +13,10 @@ public class Splash_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                Intent myIntent = new Intent(Splash_Activity.this, CategoryActivity.class);
-                startActivity(myIntent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent myIntent = new Intent(Splash_Activity.this, Login_Activity.class);
+            startActivity(myIntent);
+            finish();
         }, 5000);
     }
 }
